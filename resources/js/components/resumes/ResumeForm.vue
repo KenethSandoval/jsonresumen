@@ -13,16 +13,27 @@
 					:options="options"
 				/>
 			</Tab>
+
+			<Tab title="Profiles" icon="fa fa-users">
+				<DynamicForm
+					title="Profile"
+					:model="resume.content.basics"
+					self="profiles"
+					:schema="schemas.profile"
+				/>
+			</Tab>
 		</Tabs>
 	</div>
 </template>
 
 <script>
 import FieldResumeImage from './vfg/FieldResumeImage';
+import DynamicForm from './dynamic/DynamicForm';
 import Tabs from './tabs/Tabs';
 import Tab from './tabs/Tab';
 import basics from './schema/basics/basics'
 import location from './schema/basics/location'
+import profile from './schema/basics/profile'
 import { component as VueFormGenerator } from 'vue-form-generator';
 import 'vue-form-generator/dist/vfg.css';
 
@@ -32,7 +43,8 @@ export default {
 		Tabs,
 		Tab,
 		VueFormGenerator,
-		FieldResumeImage
+		FieldResumeImage,
+		DynamicForm
 	},
 
 	data() {
@@ -41,13 +53,14 @@ export default {
 				title: '',
 				content: {
 					basics: {
-						location: {}
+						location: {},	
 					}
 				}
 			},
 			schemas: {
 				basics,
-				location
+				location,
+				profile
 			},
 
 			options: {
