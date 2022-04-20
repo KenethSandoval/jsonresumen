@@ -5375,9 +5375,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _schema_basics_basics__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./schema/basics/basics */ "./resources/js/components/resumes/schema/basics/basics.js");
 /* harmony import */ var _schema_basics_location__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./schema/basics/location */ "./resources/js/components/resumes/schema/basics/location.js");
 /* harmony import */ var _schema_basics_profile__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./schema/basics/profile */ "./resources/js/components/resumes/schema/basics/profile.js");
-/* harmony import */ var vue_form_generator__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vue-form-generator */ "./node_modules/vue-form-generator/dist/vfg.js");
-/* harmony import */ var vue_form_generator__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(vue_form_generator__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var vue_form_generator_dist_vfg_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vue-form-generator/dist/vfg.css */ "./node_modules/vue-form-generator/dist/vfg.css");
+/* harmony import */ var _schema_work__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./schema/work */ "./resources/js/components/resumes/schema/work.js");
+/* harmony import */ var vue_form_generator__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vue-form-generator */ "./node_modules/vue-form-generator/dist/vfg.js");
+/* harmony import */ var vue_form_generator__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(vue_form_generator__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var vue_form_generator_dist_vfg_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! vue-form-generator/dist/vfg.css */ "./node_modules/vue-form-generator/dist/vfg.css");
 //
 //
 //
@@ -5406,6 +5407,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -5420,7 +5431,7 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     Tabs: _tabs_Tabs__WEBPACK_IMPORTED_MODULE_2__["default"],
     Tab: _tabs_Tab__WEBPACK_IMPORTED_MODULE_3__["default"],
-    VueFormGenerator: vue_form_generator__WEBPACK_IMPORTED_MODULE_7__.component,
+    VueFormGenerator: vue_form_generator__WEBPACK_IMPORTED_MODULE_8__.component,
     FieldResumeImage: _vfg_FieldResumeImage__WEBPACK_IMPORTED_MODULE_0__["default"],
     DynamicForm: _dynamic_DynamicForm__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
@@ -5437,7 +5448,8 @@ __webpack_require__.r(__webpack_exports__);
       schemas: {
         basics: _schema_basics_basics__WEBPACK_IMPORTED_MODULE_4__["default"],
         location: _schema_basics_location__WEBPACK_IMPORTED_MODULE_5__["default"],
-        profile: _schema_basics_profile__WEBPACK_IMPORTED_MODULE_6__["default"]
+        profile: _schema_basics_profile__WEBPACK_IMPORTED_MODULE_6__["default"],
+        work: _schema_work__WEBPACK_IMPORTED_MODULE_7__["default"]
       },
       options: {
         validateAfterLoad: true,
@@ -5463,6 +5475,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue_form_generator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-form-generator */ "./node_modules/vue-form-generator/dist/vfg.js");
 /* harmony import */ var vue_form_generator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_form_generator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _mixin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mixin */ "./resources/js/components/resumes/dynamic/mixin.js");
+//
 //
 //
 //
@@ -5497,60 +5511,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'DynamicForm',
+  mixins: [_mixin__WEBPACK_IMPORTED_MODULE_1__["default"]],
   components: {
     VueFormGenerator: vue_form_generator__WEBPACK_IMPORTED_MODULE_0__.component
   },
   props: {
-    title: {
-      type: String,
-      required: true
-    },
-    model: {
-      type: Object,
-      required: true
-    },
-    self: {
-      type: String,
-      required: true
-    },
     schema: {
       type: Object,
       required: true
-    }
-  },
-  data: function data() {
-    return {
-      target: this.model,
-      prop: this.self,
-      options: {
-        validateAfterLoad: true,
-        validateAfterChanged: true,
-        validateAsync: true
-      }
-    };
-  },
-  methods: {
-    add: function add() {
-      var _this$$data = this.$data,
-          target = _this$$data.target,
-          prop = _this$$data.prop;
-
-      if (!target[prop]) {
-        this.$set(target, prop, []);
-      }
-
-      target[prop].push({});
-    },
-    remove: function remove(i) {
-      var _this$$data2 = this.$data,
-          target = _this$$data2.target,
-          prop = _this$$data2.prop;
-
-      if (target[prop]) {
-        target[prop].splice(i, 1);
-      }
     }
   }
 });
@@ -5782,6 +5753,73 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/js/components/resumes/dynamic/mixin.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/resumes/dynamic/mixin.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: {
+    title: {
+      type: String,
+      required: true
+    },
+    model: {
+      type: Object,
+      required: true
+    },
+    self: {
+      type: String,
+      required: true
+    },
+    options: {
+      validateAfterLoad: true,
+      validateAfterChanged: true,
+      validateAsync: true
+    }
+  },
+  data: function data() {
+    return {
+      target: this.model,
+      prop: this.self,
+      push: function push() {
+        return {};
+      }
+    };
+  },
+  methods: {
+    add: function add() {
+      var _this$$data = this.$data,
+          target = _this$$data.target,
+          prop = _this$$data.prop,
+          push = _this$$data.push;
+
+      if (!target[prop]) {
+        this.$set(target, prop, []);
+      }
+
+      target[prop].push(push());
+    },
+    remove: function remove(i) {
+      var _this$$data2 = this.$data,
+          target = _this$$data2.target,
+          prop = _this$$data2.prop;
+
+      if (target[prop]) {
+        target[prop].splice(i, 1);
+      }
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./resources/js/components/resumes/schema/basics/basics.js":
 /*!*****************************************************************!*\
   !*** ./resources/js/components/resumes/schema/basics/basics.js ***!
@@ -5943,6 +5981,71 @@ __webpack_require__.r(__webpack_exports__);
     label: 'Username',
     model: 'username',
     styleClasses: ['col-md-4', 'p-0', 'px-md-1']
+  }]
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/resumes/schema/work.js":
+/*!********************************************************!*\
+  !*** ./resources/js/components/resumes/schema/work.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  fields: [// Company
+  {
+    type: 'input',
+    inputType: 'text',
+    label: 'Company',
+    placeholder: 'Company Name',
+    model: 'company',
+    styleClasses: ['col-md-4', 'p-0', 'px-md-1']
+  }, // Position
+  {
+    type: 'input',
+    inputType: 'text',
+    label: 'Position',
+    placeholder: 'Job Title',
+    model: 'position',
+    styleClasses: ['col-md-4', 'p-0', 'px-md-1']
+  }, // Website
+  {
+    type: 'input',
+    inputType: 'text',
+    label: 'Website',
+    placeholder: 'https://company.com',
+    model: 'website',
+    validator: 'url',
+    styleClasses: ['col-md-4', 'p-0']
+  }, // Start Date
+  {
+    type: 'input',
+    inputType: 'date',
+    format: 'YYYY-MM-DD HH:mm:ss',
+    label: 'Start Date',
+    model: 'startDate',
+    styleClasses: ['col-md-6', 'p-0', 'px-md-1']
+  }, // End Date
+  {
+    type: 'input',
+    inputType: 'date',
+    format: 'YYYY-MM-DD HH:mm:ss',
+    label: 'End Date',
+    model: 'endDate',
+    styleClasses: ['col-md-6', 'p-0']
+  }, // Summary
+  {
+    type: 'textArea',
+    inputType: 'text',
+    label: 'Summary',
+    placeholder: 'What was this job about?',
+    model: 'summary'
   }]
 });
 
@@ -34141,6 +34244,22 @@ var render = function () {
             ],
             1
           ),
+          _vm._v(" "),
+          _c(
+            "Tab",
+            { attrs: { title: "Work", icon: "fa fa-briefcase" } },
+            [
+              _c("DynamicForm", {
+                attrs: {
+                  title: "Work",
+                  model: _vm.resume.content,
+                  self: "profiles",
+                  schema: _vm.schemas.work,
+                },
+              }),
+            ],
+            1
+          ),
         ],
         1
       ),
@@ -34200,7 +34319,7 @@ var render = function () {
                         },
                       },
                       [
-                        _vm._v("\n\t\t\t\t\t\t\tDelete "),
+                        _vm._v("\n\t\t\t\t\t\t\t\tDelete "),
                         _c("i", { staticClass: "fa fa-trash" }),
                       ]
                     ),
@@ -34213,6 +34332,7 @@ var render = function () {
                 { staticClass: "card-body" },
                 [
                   _c("VueFormGenerator", {
+                    staticClass: "mt-3",
                     attrs: {
                       schema: _vm.schema,
                       model: _vm.target,
@@ -34238,7 +34358,7 @@ var render = function () {
             },
           },
         },
-        [_vm._v("\n\t\tAdd New\n\t")]
+        [_vm._v("\n\t\t\tAdd New\n\t\t")]
       ),
     ],
     2

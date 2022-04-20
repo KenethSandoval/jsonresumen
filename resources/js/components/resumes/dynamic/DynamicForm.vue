@@ -18,7 +18,8 @@
 						<VueFormGenerator
 							:schema="schema"
 							:model="target"
-							:options="options" 
+              class="mt-3"
+              :options="options"
 						/>
 					</div>
 				</div>
@@ -33,59 +34,20 @@
 
 <script>
 import { component as VueFormGenerator } from 'vue-form-generator';
+import mixin from './mixin';
 export default {
 	name: 'DynamicForm',
+  mixins: [mixin],
 
 	components: {
 		VueFormGenerator
 	},
 
-	props: {
-		title: {
-			type: String,
-			required: true,
-		},
-		model: {
-			type: Object,
-			required: true,
-		},
-		self: {
-			type: String,
-			required: true,
-		},
+	props: {	
 		schema: {
 			type: Object,
 			required: true,
 		},
 	},
-
-	data() {
-		return {
-			target: this.model,
-			prop: this.self,
-			options: {
-				validateAfterLoad: true,
-				validateAfterChanged: true,
-				validateAsync: true
-			}
-		}
-	},
-
-	methods: {
-		add() {
-			const { target, prop } = this.$data;
-			if(!target[prop]) {
-				this.$set(target, prop, []);
-			}
-
-			target[prop].push({});
-		},
-		remove(i){
-			const { target, prop } = this.$data;
-			if(target[prop]) {
-				target[prop].splice(i,1);
-			}
-		}
-	}
 };
 </script>

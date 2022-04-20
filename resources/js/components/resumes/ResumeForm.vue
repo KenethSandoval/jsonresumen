@@ -22,6 +22,15 @@
 					:schema="schemas.profile"
 				/>
 			</Tab>
+
+			<Tab title="Work" icon="fa fa-briefcase">
+				<DynamicForm
+					title="Work"
+					:model="resume.content"
+					self="profiles"
+					:schema="schemas.work"
+				/>
+			</Tab>
 		</Tabs>
 	</div>
 </template>
@@ -34,6 +43,7 @@ import Tab from './tabs/Tab';
 import basics from './schema/basics/basics'
 import location from './schema/basics/location'
 import profile from './schema/basics/profile'
+import work from './schema/work'
 import { component as VueFormGenerator } from 'vue-form-generator';
 import 'vue-form-generator/dist/vfg.css';
 
@@ -60,9 +70,9 @@ export default {
 			schemas: {
 				basics,
 				location,
-				profile
+				profile,
+				work
 			},
-
 			options: {
 				validateAfterLoad: true,
 				validateAfterChanged: true,
