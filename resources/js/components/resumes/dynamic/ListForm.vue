@@ -1,11 +1,11 @@
 <template>
   <div class="card my-2">
     <div class="card-header">
-      <h3>{{ title }}</h3>
+      <h3>Skills</h3>
     </div>
 
     <div class="card-body">
-      <div v-for="(_, index) in model[self]" :key="index">
+      <div v-for="(input, i) in target[prop]" :key="i">
         <div class="d-flex mb-4 p-0">
           <div class="col-10 p-0">
             <input
@@ -13,8 +13,8 @@
               required
               autofocus
               class="form-control"
-              :placeholder="placeholder"
-              v-model="model[self][index]"
+							placeholder="PHP"
+              v-model="inputs[i]"
             />
           </div>
           <div class="col-2">
@@ -43,17 +43,11 @@
 import mixin from './mixin';
 export default {
   name: 'ListForm',
-  mixins: [mixin],
-  props: {
-    placeholder: {
-      type: String,
-      required: true,
-    },
-  },
+  mixins: [mixin], 
   data() {
     return {
       push: () => '',
-    };
+    }
   },
 };
 </script>

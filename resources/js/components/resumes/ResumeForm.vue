@@ -20,6 +20,7 @@
 					:model="resume.content.basics"
 					self="profiles"
 					:schema="schemas.profile"
+					:subforms="subforms.work"
 				/>
 			</Tab>
 
@@ -38,6 +39,7 @@
 <script>
 import FieldResumeImage from './vfg/FieldResumeImage';
 import DynamicForm from './dynamic/DynamicForm';
+import ListForm from './dynamic/ListForm';
 import Tabs from './tabs/Tabs';
 import Tab from './tabs/Tab';
 import basics from './schema/basics/basics'
@@ -72,6 +74,17 @@ export default {
 				location,
 				profile,
 				work
+			},
+			subforms: {
+				work: [
+					{
+						component: ListForm,
+						props: {
+							title: 'Highlights',
+							self: 'highlights'
+						}
+					},
+				]
 			},
 			options: {
 				validateAfterLoad: true,

@@ -21,6 +21,12 @@
               class="mt-3"
               :options="options"
 						/>
+						<div v-for="(subform, j) in subforms" :key="j">
+							<component
+								:is="subform.component"
+								v-bind="{ model: target[prop][i], ...subforms.props }"
+							/>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -48,6 +54,11 @@ export default {
 			type: Object,
 			required: true,
 		},
+		subforms: {
+			type: Array,
+			required: false,
+			default: () => []
+		}
 	},
 };
 </script>
