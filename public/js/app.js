@@ -5368,18 +5368,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _vfg_FieldResumeImage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vfg/FieldResumeImage */ "./resources/js/components/resumes/vfg/FieldResumeImage.vue");
-/* harmony import */ var _dynamic_DynamicForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dynamic/DynamicForm */ "./resources/js/components/resumes/dynamic/DynamicForm.vue");
-/* harmony import */ var _dynamic_ListForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./dynamic/ListForm */ "./resources/js/components/resumes/dynamic/ListForm.vue");
-/* harmony import */ var _tabs_Tabs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./tabs/Tabs */ "./resources/js/components/resumes/tabs/Tabs.vue");
-/* harmony import */ var _tabs_Tab__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./tabs/Tab */ "./resources/js/components/resumes/tabs/Tab.vue");
-/* harmony import */ var _schema_basics_basics__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./schema/basics/basics */ "./resources/js/components/resumes/schema/basics/basics.js");
-/* harmony import */ var _schema_basics_location__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./schema/basics/location */ "./resources/js/components/resumes/schema/basics/location.js");
-/* harmony import */ var _schema_basics_profile__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./schema/basics/profile */ "./resources/js/components/resumes/schema/basics/profile.js");
-/* harmony import */ var _schema_work__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./schema/work */ "./resources/js/components/resumes/schema/work.js");
-/* harmony import */ var vue_form_generator__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! vue-form-generator */ "./node_modules/vue-form-generator/dist/vfg.js");
-/* harmony import */ var vue_form_generator__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(vue_form_generator__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var vue_form_generator_dist_vfg_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! vue-form-generator/dist/vfg.css */ "./node_modules/vue-form-generator/dist/vfg.css");
+/* harmony import */ var _dynamic_DynamicForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dynamic/DynamicForm */ "./resources/js/components/resumes/dynamic/DynamicForm.vue");
+/* harmony import */ var _dynamic_ListForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dynamic/ListForm */ "./resources/js/components/resumes/dynamic/ListForm.vue");
+/* harmony import */ var _tabs_Tabs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tabs/Tabs */ "./resources/js/components/resumes/tabs/Tabs.vue");
+/* harmony import */ var _tabs_Tab__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./tabs/Tab */ "./resources/js/components/resumes/tabs/Tab.vue");
+/* harmony import */ var _schema_basics_basics__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./schema/basics/basics */ "./resources/js/components/resumes/schema/basics/basics.js");
+/* harmony import */ var _schema_education__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./schema/education */ "./resources/js/components/resumes/schema/education.js");
+/* harmony import */ var _schema_skills__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./schema/skills */ "./resources/js/components/resumes/schema/skills.js");
+/* harmony import */ var _schema_awards__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./schema/awards */ "./resources/js/components/resumes/schema/awards.js");
+/* harmony import */ var _schema_basics_location__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./schema/basics/location */ "./resources/js/components/resumes/schema/basics/location.js");
+/* harmony import */ var _schema_basics_profile__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./schema/basics/profile */ "./resources/js/components/resumes/schema/basics/profile.js");
+/* harmony import */ var _schema_work__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./schema/work */ "./resources/js/components/resumes/schema/work.js");
+/* harmony import */ var _jsonresume__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./jsonresume */ "./resources/js/components/resumes/jsonresume.js");
+/* harmony import */ var vue_form_generator__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! vue-form-generator */ "./node_modules/vue-form-generator/dist/vfg.js");
+/* harmony import */ var vue_form_generator__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(vue_form_generator__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var vue_form_generator_dist_vfg_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! vue-form-generator/dist/vfg.css */ "./node_modules/vue-form-generator/dist/vfg.css");
 //
 //
 //
@@ -5418,6 +5421,38 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
 
 
 
@@ -5432,35 +5467,58 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "ResumeForm",
   components: {
-    Tabs: _tabs_Tabs__WEBPACK_IMPORTED_MODULE_3__["default"],
-    Tab: _tabs_Tab__WEBPACK_IMPORTED_MODULE_4__["default"],
-    VueFormGenerator: vue_form_generator__WEBPACK_IMPORTED_MODULE_9__.component,
-    FieldResumeImage: _vfg_FieldResumeImage__WEBPACK_IMPORTED_MODULE_0__["default"],
-    DynamicForm: _dynamic_DynamicForm__WEBPACK_IMPORTED_MODULE_1__["default"]
+    Tabs: _tabs_Tabs__WEBPACK_IMPORTED_MODULE_2__["default"],
+    Tab: _tabs_Tab__WEBPACK_IMPORTED_MODULE_3__["default"],
+    VueFormGenerator: vue_form_generator__WEBPACK_IMPORTED_MODULE_12__.component,
+    DynamicForm: _dynamic_DynamicForm__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  props: {
+    update: false,
+    resume: {
+      type: Object,
+      "default": function _default() {
+        return {
+          id: null,
+          title: "Resume Title",
+          content: _jsonresume__WEBPACK_IMPORTED_MODULE_11__["default"]
+        };
+      }
+    }
   },
   data: function data() {
     return {
-      resume: {
-        title: '',
-        content: {
-          basics: {
-            location: {}
-          }
-        }
-      },
       schemas: {
-        basics: _schema_basics_basics__WEBPACK_IMPORTED_MODULE_5__["default"],
-        location: _schema_basics_location__WEBPACK_IMPORTED_MODULE_6__["default"],
-        profile: _schema_basics_profile__WEBPACK_IMPORTED_MODULE_7__["default"],
-        work: _schema_work__WEBPACK_IMPORTED_MODULE_8__["default"]
+        basics: _schema_basics_basics__WEBPACK_IMPORTED_MODULE_4__["default"],
+        location: _schema_basics_location__WEBPACK_IMPORTED_MODULE_8__["default"],
+        profile: _schema_basics_profile__WEBPACK_IMPORTED_MODULE_9__["default"],
+        work: _schema_work__WEBPACK_IMPORTED_MODULE_10__["default"],
+        education: _schema_education__WEBPACK_IMPORTED_MODULE_5__["default"],
+        skills: _schema_skills__WEBPACK_IMPORTED_MODULE_6__["default"],
+        awards: _schema_awards__WEBPACK_IMPORTED_MODULE_7__["default"]
       },
       subforms: {
         work: [{
-          component: _dynamic_ListForm__WEBPACK_IMPORTED_MODULE_2__["default"],
+          component: _dynamic_ListForm__WEBPACK_IMPORTED_MODULE_1__["default"],
           props: {
             title: 'Highlights',
             self: 'highlights',
             placeholder: 'Started the company'
+          }
+        }],
+        education: [{
+          component: _dynamic_ListForm__WEBPACK_IMPORTED_MODULE_1__["default"],
+          props: {
+            title: 'Courses',
+            self: 'courses',
+            placeholder: 'DBA1 SQL'
+          }
+        }],
+        skills: [{
+          component: _dynamic_ListForm__WEBPACK_IMPORTED_MODULE_1__["default"],
+          props: {
+            title: 'Keywords',
+            self: 'keywords',
+            placeholder: 'Javascript'
           }
         }]
       },
@@ -5923,6 +5981,119 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/resumes/jsonresume.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/resumes/jsonresume.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  basics: {
+    name: '',
+    label: '',
+    picture: "/storage/pictures/default.png",
+    email: '',
+    phone: '',
+    website: '',
+    summary: '',
+    location: {
+      address: '',
+      postalCode: '',
+      city: '',
+      countryCode: '',
+      region: ''
+    },
+    profiles: [{
+      network: '',
+      username: '',
+      url: ''
+    }]
+  },
+  work: [{
+    company: '',
+    position: '',
+    website: '',
+    startDate: '',
+    endDate: '',
+    summary: '',
+    highlights: ['']
+  }],
+  education: [{
+    institution: '',
+    area: '',
+    studyType: '',
+    startDate: '',
+    endDate: '',
+    gpa: '',
+    courses: ['']
+  }],
+  awards: [{
+    title: '',
+    date: '',
+    awarder: '',
+    summary: ''
+  }],
+  skills: [{
+    name: '',
+    level: '',
+    keywords: ['']
+  }]
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/resumes/schema/awards.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/resumes/schema/awards.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  fields: [// Title
+  {
+    type: 'input',
+    inputType: 'text',
+    label: 'Title',
+    placeholder: 'Award Title',
+    model: 'title',
+    styleClasses: ['col-md-4', 'p-0', 'px-md-1']
+  }, // Date
+  {
+    type: 'input',
+    inputType: 'date',
+    label: 'Date',
+    model: 'date',
+    styleClasses: ['col-md-4', 'p-0', 'px-md-1']
+  }, // Awarder
+  {
+    type: 'input',
+    inputType: 'text',
+    label: 'Awarder',
+    placeholder: 'Company',
+    model: 'awarder',
+    styleClasses: ['col-md-4', 'p-0']
+  }, // Summary
+  {
+    type: 'textArea',
+    inputType: 'text',
+    label: 'Summary',
+    placeholder: 'There is no spoon.',
+    model: 'summary'
+  }]
+});
+
+/***/ }),
+
 /***/ "./resources/js/components/resumes/schema/basics/basics.js":
 /*!*****************************************************************!*\
   !*** ./resources/js/components/resumes/schema/basics/basics.js ***!
@@ -6084,6 +6255,104 @@ __webpack_require__.r(__webpack_exports__);
     label: 'Username',
     model: 'username',
     styleClasses: ['col-md-4', 'p-0', 'px-md-1']
+  }]
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/resumes/schema/education.js":
+/*!*************************************************************!*\
+  !*** ./resources/js/components/resumes/schema/education.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  fields: [// Institution
+  {
+    type: 'input',
+    inputType: 'text',
+    label: 'Institution',
+    placeholder: 'University or Institution name',
+    model: 'institution',
+    styleClasses: ['col-md-4', 'p-0', 'px-md-1']
+  }, // Area
+  {
+    type: 'input',
+    inputType: 'text',
+    label: 'Area',
+    placeholder: 'Computer Science',
+    model: 'area',
+    styleClasses: ['col-md-4', 'p-0', 'px-md-1']
+  }, // Study Type
+  {
+    type: 'input',
+    inputType: 'text',
+    label: 'Study Type',
+    placeholder: 'Bachelor of Science',
+    model: 'studyType',
+    styleClasses: ['col-md-4', 'p-0']
+  }, // Start Date
+  {
+    type: 'input',
+    inputType: 'date',
+    format: 'YYYY-MM-DD HH:mm:ss',
+    label: 'Start Date',
+    model: 'startDate',
+    styleClasses: ['col-md-4', 'p-0', 'px-md-1']
+  }, // End Date
+  {
+    type: 'input',
+    inputType: 'date',
+    format: 'YYYY-MM-DD HH:mm:ss',
+    label: 'End Date',
+    model: 'endDate',
+    styleClasses: ['col-md-4', 'p-0', 'px-md-1']
+  }, // GPA
+  {
+    type: 'input',
+    inputType: 'number',
+    label: 'GPA',
+    model: 'gpa',
+    validor: 'number',
+    styleClasses: ['col-md-4', 'p-0']
+  }]
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/resumes/schema/skills.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/resumes/schema/skills.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  fields: [// Name
+  {
+    type: 'input',
+    inputType: 'text',
+    label: 'Name',
+    placeholder: 'Web Development',
+    model: 'name',
+    styleClasses: ['col-md-6', 'p-0', 'pr-md-1']
+  }, // Level
+  {
+    type: 'input',
+    inputType: 'text',
+    label: 'level',
+    placeholder: 'Master',
+    model: 'level',
+    styleClasses: ['col-md-6', 'p-0']
   }]
 });
 
@@ -34428,9 +34697,59 @@ var render = function () {
                 attrs: {
                   title: "Work",
                   model: _vm.resume.content,
-                  self: "profiles",
+                  self: "work",
                   schema: _vm.schemas.work,
                   subforms: _vm.subforms.work,
+                },
+              }),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "Tab",
+            { attrs: { title: "Education", icon: "fa fa-graduation-cap" } },
+            [
+              _c("DynamicForm", {
+                attrs: {
+                  title: "Education",
+                  model: _vm.resume.content,
+                  self: "education",
+                  schema: _vm.schemas.education,
+                  subforms: _vm.subforms.education,
+                },
+              }),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "Tab",
+            { attrs: { title: "Skills", icon: "fa fa-lightbulb" } },
+            [
+              _c("DynamicForm", {
+                attrs: {
+                  title: "Skill",
+                  model: _vm.resume.content,
+                  self: "skills",
+                  schema: _vm.schemas.skills,
+                  subforms: _vm.subforms.skills,
+                },
+              }),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "Tab",
+            { attrs: { title: "Awards", icon: "fa fa-trophy" } },
+            [
+              _c("DynamicForm", {
+                attrs: {
+                  title: "Award",
+                  model: _vm.resume.content,
+                  self: "awards",
+                  schema: _vm.schemas.awards,
                 },
               }),
             ],
