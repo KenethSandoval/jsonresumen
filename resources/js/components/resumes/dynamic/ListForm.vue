@@ -1,7 +1,7 @@
 <template>
   <div class="card my-2">
     <div class="card-header">
-      <h3>Skills</h3>
+      <h3>{{ title }}</h3>
     </div>
 
     <div class="card-body">
@@ -13,13 +13,13 @@
               required
               autofocus
               class="form-control"
-							placeholder="PHP"
-              v-model="inputs[i]"
+							:placeholder="placeholder"
+              v-model="target[prop][i]"
             />
           </div>
           <div class="col-2">
             <div class="d-flex justify-content-end">
-              <button class="btn btn-danger" @click="remove(index)">
+              <button class="btn btn-danger" @click="remove(i)">
                 <i class="fa fa-trash"></i>
               </button>
             </div>
@@ -43,7 +43,15 @@
 import mixin from './mixin';
 export default {
   name: 'ListForm',
-  mixins: [mixin], 
+  mixins: [mixin],
+
+	props: {
+		placeholder: {
+			type: String,
+			default: () => ''
+		}
+	},
+
   data() {
     return {
       push: () => '',

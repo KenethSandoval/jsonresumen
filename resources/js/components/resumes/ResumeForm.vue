@@ -20,7 +20,6 @@
 					:model="resume.content.basics"
 					self="profiles"
 					:schema="schemas.profile"
-					:subforms="subforms.work"
 				/>
 			</Tab>
 
@@ -30,6 +29,7 @@
 					:model="resume.content"
 					self="profiles"
 					:schema="schemas.work"
+					:subforms="subforms.work"
 				/>
 			</Tab>
 		</Tabs>
@@ -81,7 +81,8 @@ export default {
 						component: ListForm,
 						props: {
 							title: 'Highlights',
-							self: 'highlights'
+							self: 'highlights',
+							placeholder: 'Started the company'
 						}
 					},
 				]

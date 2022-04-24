@@ -5459,7 +5459,8 @@ __webpack_require__.r(__webpack_exports__);
           component: _dynamic_ListForm__WEBPACK_IMPORTED_MODULE_2__["default"],
           props: {
             title: 'Highlights',
-            self: 'highlights'
+            self: 'highlights',
+            placeholder: 'Started the company'
           }
         }]
       },
@@ -5611,6 +5612,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'ListForm',
   mixins: [_mixin__WEBPACK_IMPORTED_MODULE_0__["default"]],
+  props: {
+    placeholder: {
+      type: String,
+      "default": function _default() {
+        return '';
+      }
+    }
+  },
   data: function data() {
     return {
       push: function push() {
@@ -34405,7 +34414,6 @@ var render = function () {
                   model: _vm.resume.content.basics,
                   self: "profiles",
                   schema: _vm.schemas.profile,
-                  subforms: _vm.subforms.work,
                 },
               }),
             ],
@@ -34422,6 +34430,7 @@ var render = function () {
                   model: _vm.resume.content,
                   self: "profiles",
                   schema: _vm.schemas.work,
+                  subforms: _vm.subforms.work,
                 },
               }),
             ],
@@ -34520,7 +34529,7 @@ var render = function () {
                             Object.assign(
                               {},
                               { model: _vm.target[_vm.prop][i] },
-                              _vm.subforms.props
+                              subform.props
                             ),
                             false
                           )
@@ -34578,7 +34587,9 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "card my-2" }, [
-    _vm._m(0),
+    _c("div", { staticClass: "card-header" }, [
+      _c("h3", [_vm._v(_vm._s(_vm.title))]),
+    ]),
     _vm._v(" "),
     _c(
       "div",
@@ -34593,8 +34604,8 @@ var render = function () {
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.inputs[i],
-                      expression: "inputs[i]",
+                      value: _vm.target[_vm.prop][i],
+                      expression: "target[prop][i]",
                     },
                   ],
                   staticClass: "form-control",
@@ -34602,15 +34613,15 @@ var render = function () {
                     type: "text",
                     required: "",
                     autofocus: "",
-                    placeholder: "PHP",
+                    placeholder: _vm.placeholder,
                   },
-                  domProps: { value: _vm.inputs[i] },
+                  domProps: { value: _vm.target[_vm.prop][i] },
                   on: {
                     input: function ($event) {
                       if ($event.target.composing) {
                         return
                       }
-                      _vm.$set(_vm.inputs, i, $event.target.value)
+                      _vm.$set(_vm.target[_vm.prop], i, $event.target.value)
                     },
                   },
                 }),
@@ -34624,7 +34635,7 @@ var render = function () {
                       staticClass: "btn btn-danger",
                       on: {
                         click: function ($event) {
-                          return _vm.remove(_vm.index)
+                          return _vm.remove(i)
                         },
                       },
                     },
@@ -34655,16 +34666,7 @@ var render = function () {
     ),
   ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-header" }, [
-      _c("h3", [_vm._v("Skills")]),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

@@ -24,7 +24,7 @@
 						<div v-for="(subform, j) in subforms" :key="j">
 							<component
 								:is="subform.component"
-								v-bind="{ model: target[prop][i], ...subforms.props }"
+								v-bind="{ model: target[prop][i], ...subform.props }"
 							/>
 						</div>
 					</div>
