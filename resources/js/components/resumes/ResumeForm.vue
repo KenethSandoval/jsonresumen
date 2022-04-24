@@ -1,5 +1,23 @@
 <template>
   <div>
+		<Alert
+			v-if="Array.isArray(alert.messages) && alert.messages.length > 0 || typeof alert.messages === 'string'"
+			:messages="alert.messages"
+			:type="alert.type"
+		/>
+		<div class="row mb-3">
+			<div class="col-sm-8">
+				<div class="form-group">
+					<input v-model="resume.title" placeholder="Resume Title" required autofocus class="form-control w-100"/>
+				</div>
+			</div>
+
+			<div class="col-sm-4">
+				<button class="btn btn-success btn-block" @click="submit()">
+					Submit <i class="fa fa-upload"></i>
+				</button>
+			</div>
+		</div>
 		<Tabs>
 			<Tab title="Basics" icon="fas fa-user">
 				<VueFormGenerator
@@ -70,6 +88,7 @@ import DynamicForm from './dynamic/DynamicForm';
 import ListForm from './dynamic/ListForm';
 import Tabs from './tabs/Tabs';
 import Tab from './tabs/Tab';
+import Alert from '../reusable/Alert';
 
 import basics from './schema/basics/basics'
 import education from './schema/education'
@@ -89,7 +108,8 @@ export default {
 		Tabs,
 		Tab,
 		VueFormGenerator,
-		DynamicForm
+		DynamicForm,
+		Alert
 	},
 
 	props: {
@@ -106,6 +126,10 @@ export default {
 
 	data() {
 		return {
+			alert: {
+				type: 'warning',
+				messages: [],
+			},
 			schemas: {
 				basics,
 				location,
@@ -151,6 +175,16 @@ export default {
 				validateAfterLoad: true,
 				validateAfterChanged: true,
 				validateAsync: true
+			}
+		}
+	},
+	methods: {
+		async submit() {
+			try {
+				const res = await axios.post('/resumes', this.resume);
+				console.log(res.data);
+			} catch(e) {
+				this.alert.messages = 'Ha habido un error';
 			}
 		}
 	}

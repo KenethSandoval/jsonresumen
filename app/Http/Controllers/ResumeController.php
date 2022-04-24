@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreResume;
 use App\Models\Resume;
 use Illuminate\Http\Request;
 
@@ -18,8 +19,9 @@ class ResumeController extends Controller
 		return view('resumes.create', compact('resume'));
 	}
 
-	public function store()
+	public function store(StoreResume $request)
 	{
-
+		$data = $request->validated();
+		return response()->json($data);
 	}
 }
